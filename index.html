@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet" href="css/all.css"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://rawcdn.githack.com/stonny71/mycss/a28ff91d9b016830b42c9b28eee5375407de11a3/stonny-sponge.css"/>
+<link rel="stylesheet" href="xmasAnimation.css"/>
+<title>spongebob</title>
+<style type="text/css">
+
+</style>
+
+<script src="xmas.js">  </script>
+<script src="quick.js">  </script>
+
+<script src="https://rawcdn.githack.com/stonny71/pling/e5f31458c372f0ec4e46a9e92b8d32eada36fa9b/pling.js">  </script>
+</head>
+<body>
+
+<audio id="music" >
+<source src="https://www.mfiles.co.uk/mp3-downloads/i-saw-three-ships-tune-a-keyboard.mp3" type="audio/mpeg">
+</audio>
+
+
+<audio id="amready" >
+<source src="https://www.myinstants.com/media/sounds/im-ready.mp3" type="audio/mpeg">
+</audio>
+<!--comment box--->
+<div id="popit" >
+<div id="popid" ></div>
+<select  id="select">
+<option value="close" >stop trivia</option>
+<option selected="selected"  value="" >1</option>
+<option >2</option>
+<option >3</option>
+<option >4</option>
+<option >5</option>
+<option >6</option>
+<option >7</option>
+<option >8</option>
+<option >9</option>
+<option >10</option>
+<option >11</option>
+<option >12</option>
+<option >13</option>
+<option >14</option>
+<option >15</option>
+<option >16</option>
+<option >17</option>
+</select>
+
+</div>
+
+
+
+<div id="comment-box"  >
+<div style="display:none"  id="comment" >
+<div id="pointer" ></div>
+<div id="pointer2" ></div>
+</div>
+</div>
+<center>
+<div id="sponge" >
+<div id="stomach" >
+
+<div onclick="changeHat()" id="hatt">
+<div id="hat" >🎩</div></div>
+<div id="eyes1" ></div>
+<div id="eyes1-pupil" ></div>
+<div id="eyes2" ></div>
+<div id="eyes2-pupil" ></div>
+<div onclick="document.getElementById('goggle').classList.toggle('show')" id="glass" >
+<div id="goggle"  class="fa fa-glasses" ></div>
+</div>
+<div id="nose" ></div>
+<div onclick="document.getElementById('mouth').classList.toggle('bite');" id="mouth" ></div>
+<div id="teeth1" ></div>
+<div id="teeth2" ></div>
+
+
+<div id="waist" ></div>
+<div id="guiter" >🎀</div>
+<div id="short1" ></div>
+<div id="short2" ></div>
+<div id="belt" ></div>
+<div id="belt-holder" ></div>
+<div id="belt-hook1" ></div>
+<div id="belt-hook2" ></div>
+<div id="limb" >
+<div onclick="stampish1" id="leg1" ></div>
+<div onclick="stampish2()" id="leg2" ></div>
+<div onclick="stampish1()" id="shoe1" ></div>
+<div onclick="stampish2()" id="shoe2" ></div>
+<div onclick="stampish1()" id="socks1" ></div>
+<div onclick="stampish2()" id="socks2" ></div>
+</div>
+<div id="chick1" ></div>
+<div id="chick2" ></div>
+<div id="iris1" ></div>
+<div id="iris2" ></div>
+<div id="hand1" ></div>
+</div>
+
+<!--main >>show message<<-->
+<div id="main" >
+<div onclick="hideMsg()" style="box-shadow:none;color:white; text-shadow:1px 2px 1px black;font-size:1.5em; position: absolute;bottom:90%;right:-3%"  class="fa fa-times-circle" ></div>
+<input id="inp"  type="text" >
+<h1 onclick="enterMsg()">ENTER</h1>
+</div>
+
+<!--option-->
+<div id="options" >
+<div onclick="showdress()" class="write fa fa-baby " ></div>
+<div onclick="showshoe()" class="write fa fa-shoe-prints " ></div>
+<div onclick="dance()" class="write fa fa-microphone-alt" ></div>
+<a onclick="showComment()"; href="#inp" ><div class="write fa fa-comment-dots" ></div></a>
+</div>
+</div>
+<!--dressul-->
+<div style="display:none"  id="dress-color" >
+<span onclick="dressup(this.style.background)" style="background:#BF360C" ></span>
+<span onclick="dressup(this.style.background)" style="background:#7C4DFF" ></span>
+<span onclick="dressup(this.style.background)" style="background:#00E676" ></span>
+<span onclick="dressup(this.style.background)" style="background:#F50057" ></span>
+<span onclick="dressup(this.style.background)" style="background:#FFFF00" ></span>
+<span onclick="dressup(this.style.background)" style="background:#3E2723" ></span>
+<span onclick="dressup(this.style.background)" style="background:#E040FB" ></span>
+<span onclick="dressup(this.style.background)" style="background:#3D5AFE" ></span>
+<span onclick="dressup(this.style.background)" style="background:#263238" ></span>
+<span onclick="this.parentElement.style.display='none'" style="box-shadow:none;color:white; text-shadow:1px 2px 1px black;font-size:1.5em"  class="fa fa-times-circle" ></span>
+</div>
+
+<!--shoeul-->
+<div style="display:none"  id="shoe-color" >
+<span onclick="shoeup(this.style.background)" style="background:#BF360C" ></span>
+<span onclick="shoeup(this.style.background)" style="background:#7C4DFF" ></span>
+<span onclick="shoeup(this.style.background)" style="background:#00E676" ></span>
+<span onclick="shoeup(this.style.background)" style="background:#F50057" ></span>
+<span onclick="shoeup(this.style.background)" style="background:#FFFF00" ></span>
+<span onclick="shoeup(this.style.background)" style="background:#3E2723" ></span>
+<span onclick="shoeup(this.style.background)" style="background:#E040FB" ></span>
+<span onclick="shoeup(this.style.background)" style="background:#3D5AFE" ></span>
+<span onclick="shoeup(this.style.background)" style="background:#263238" ></span>
+
+<span onclick="this.parentElement.style.display='none'" style="box-shadow:none;color:white; text-shadow:1px 2px 1px black;font-size:1.5em"  class="fa fa-times-circle" ></span>
+</div>
+
+
+
+</center>
+
+</div>
+
+</center>
+<script type="text/javascript">
+
+function playmusic (){
+var music = document.getElementById("music");
+music.play();
+}
+
+cbox=document.getElementById("comment-box");
+var ball1=document.getElementById("eyes1-pupil");
+var ball2=document.getElementById("eyes2-pupil");
+var hat = document.getElementById("hat");
+var caps= ["👛","<span style='top:20px; left:-30px; font-size:150px; position:relative'> 🎧</span>","<span style='top:20px; position:relative'> 🧢</span>","👑", "<span style='top:37px; position:relative'>🎓</span>","<span style='top:0px; position:relative'>👝</span>"]
+var capit=0
+function changeHat(){
+ hat.innerHTML=caps[capit]
+ capit++
+ if(capit==6){
+ capit=0
+ }
+ 
+ }
+var eyes1=document.getElementById("eyes1");
+var eyse2=document.getElementById("eyes2");
+var stomach = document.getElementById("stomach");
+var leg1= document.getElementById("leg1");
+var leg2= document.getElementById("leg2");
+var limb= document.getElementById("limb");
+var waist = document.getElementById("waist");
+var short1=document.getElementById("short1");
+var short2=document.getElementById("short2");
+var shoe1=document.getElementById("shoe1");
+var shoe2=document.getElementById("shoe2");
+var socks1=document.getElementById("socks1");
+var socks2=document.getElementById("socks2");
+var mouth = document.getElementById("mouth");
+var comment = document.getElementById("comment");
+var ranny=Math.floor(Math.random()*20000)
+var main =document.getElementById("main");
+var inp = document.getElementById("inp");
+var shoeColor= document.getElementById("shoe-color");
+var dressColor= document.getElementById("dress-color");
+var readY= document.getElementById("amready");
+
+var goggle = document.getElementById("goggle");
+var iris1=document.getElementById("iris1");
+var iris2=document.getElementById("iris2");
+var t = setInterval(bleem,ranny)
+function bleem(){
+eyes1.classList.toggle("blink");
+eyes2.classList.toggle("blink");
+}
+
+var popid = document.getElementById("popid");
+popid.style.zIndex=50000;
+var popit = document.getElementById("popit");
+
+var select = document.getElementById("select");
+
+select.onchange=function (){
+if(this.value=="close"||this.value==1){
+popit.style.display="none"
+}
+ popid.innerHTML=this.value
+ }
+
+
+var sel= [1,
+"Spongebob without a goggle looks like someone that is lost...tahahhahah",
+"According to Mr.krab,<br>The 5 letter words for Happiness is M-O-N-E-Y",
+"Did you know that the fear of santa claus 🎅 is called Claustrophobia ? tahahahhaha",
+"If you swallow the seed of a fruit, you will be fruitful.",
+"A bolt of lightening contains enough energy to toast 100,000 krabby paddy.",
+"Cherophobia is the word for the irrational fear of being happy.",
+"Did you know that water bottle expiration dates are for the bottle, not the water.",
+"If you are reading this, there's a great tendency that you have multiple facebook account. hohoho",
+"If you can't sleep in the night, it means you are definitely locked out of sleep server in the virtual world",
+"There's always someone who secretly admires us BUT they are always ugly... just like me tahahhahah",
+"According to Mr.Krab, There's nothing like true friend And the 5 letter words for friendship is M-O-N-E-Y 🤣🤣 ",
+"Did you know Julian's Diary was a story that partly revolved around Stonny's life ? 😥",
+"If you can't help someone, please pray for them. If you can actually help someone -  don't just pray for them, help them !!!...",
+"Did you that some bugs in this program is bigger than Dinosaurs ?",
+"If you want to go on a Canvas Adventure, Mad Coder is the best tour guide... ",
+"The letter 'H' in the word 'programming' means Happiness",
+"3 things that can make you cry.<li>Relationship breakup</li><li>Losing someone you love</li><li>BUGS IN YOUR PROGRAM 🤣</li>",
+"If you enjoy this program, Please follow me<br>Also have a joyful and merry Christmas."
+]
+opt = document.getElementsByTagName("option");
+
+for( i=0; i<opt.length; i++){
+opt[i].value=sel[i]  
+  }
+
+
+function showdress(m){
+comment.style.display="none";
+hideEl("dress-color");
+ }
+function showshoe(m){
+comment.style.display="none";
+hideEl("shoe-color");
+ }
+function hideMsg(){
+main.style.display="none";
+options.style.display="block"
+}
+
+function dressup(x){ 
+waist.style.background=x
+short1.style.background=x
+short2.style.background=x
+document.getElementById("belt-hook1").style.background=x;
+document.getElementById("belt-hook2").style.background=x;
+comment.style.display="none";
+}
+
+function shoeup(x){ 
+comment.style.display="none";
+shoe1.style.background=x;
+shoe2.style.background=x;
+}
+
+
+function stampish1(){
+z="bigboot1"
+leg1.classList.toggle(z);
+shoe1.classList.toggle(z);
+socks2.classList.toggle(z);
+mouth.classList.toggle("talk")
+}
+function stampish2(){
+a="bigboot2"
+leg2.classList.toggle(a);
+shoe2.classList.toggle(a);
+socks1.classList.toggle(a);
+}
+
+function showComment(){
+ inp.value=""
+ hideEl("main");
+ options.style.display="none";
+ }
+ 
+ function hideEl(x){ 
+ main.style.display='none';
+ 
+ shoeColor.style.display="none";
+ dressColor.style.display="none";
+ document.getElementById(x).style.display="block";
+ }
+ 
+ 
+ var talk="";
+function popup(talk){
+comment.style.display="block"
+comment.innerHTML=talk
+say(2)
+ }
+
+var talk2=""
+function popup1(talk2){
+popid.innerHTML=talk2;
+ }
+
+
+
+
+var time;
+function say(time){ 
+if(time=="stop"){
+return
+}
+
+mouth.classList.toggle("talk");
+var inter= setTimeout(function (){ 
+mouth.classList.toggle("talk")
+},1000*time)
+}
+
+
+//onlaod 
+document.body.onload = function (){ 
+popup("<h3>Hi Merry Xmas there !!! <br><br>Type help for help. 🤣<br><br>type <i>Trivia</i> for craziest facts ever;</h3>")
+
+}
+
+Pling("I'm wishing everyone a joyful, merry and a happy holiday.<br>Merry Christmas there, you always matter 🥰<br>I just want to entertain you with this funny program.<br>If you enjoy it please do leave a comment and upvote.<br>Also follow me too 😘","Merry Christmas","pling")
+
+
+//breathe 
+stomach.classList.add("breathe");
+function triv(){
+cbox.style.display="block"
+ }
+function enterMsg(){ 
+main.style.display="none";
+if(inp.value.match(/patr|patrick|pat|friend|buddy|pal/i)){
+triv();
+popup("Patrick is my real buddy, we won't be going for jelly fishing this winter. it is damn cold outside.");
+limb.classList.toggle("cold1");
+setTimeout(function (){
+limb.classList.toggle("cold1"); },5000)
+}
+else if(inp.value.match(/sandy/i)){
+triv();
+popup("Sandy is the best legal engineer we have in Bikini bottom. <br> She can do wonders with tech. !!!");
+}
+else if(inp.value.match(/trivia/i)){
+quotes();
+}
+else if(inp.value.match(/help/i)){
+Pling("<small style='font-size:10px; line-height:8px'>Touch the text box to make them disappear<hr>Spongebob is so sensitive to cold and touches, if you find it crazy seeing him move his mouth for no reason, just touch his mouth, he will surely shut up <hr>It's also your choice to explore the hidden features here about spongebob.<hr>spongebob has 3 glasses in his wardrobe (red,blue, and black glass). <br>type 'red glass' or 'wear red glass' to change his glass.<br> also do the same thing for his other glasses.<small>","HELP","pling");
+
+}
+
+
+else if(inp.value.match(/dance|sing/i)){
+triv(1);
+dance();
+}
+
+else if(inp.value.match(/red glass|wear red glass/i)){
+triv(1);
+glass.style.color="#C62828"
+}
+else if(inp.value.match(/blue glass|wear blue glass/i)){
+triv(1);
+glass.style.color="#1565C0"
+}
+
+else if(inp.value.match(/black glass|wear black glass/i)){
+triv(1);
+glass.style.color="black"
+}
+else if(inp.value.match(/stop|end|halt/i)){
+triv();
+popit.style.visibility="hidden"
+}
+
+else if(inp.value.match(/plank/i)){
+triv();
+popup("Plankton is a small but mighty dude in Bikini Bottom, he's a real threat to Krusty Krab or maybe Krusty Kraby is his real threat...!!!");
+}
+else if(inp.value.match(/crab|krab/i)){
+triv();
+popup("Mr.Krab is Bikini Bottom's Bill Gates version, he's worth more than 20 zillion gold.<br>But he's so selfish !!");
+}
+
+else if(inp.value.match(/benacle|bernacle|bern|mermaid/i)){
+triv();
+popup("Superheroes of Bikini bottom.<br>Mermaid-Man and Bernacle-Boy.");
+}
+
+else if(inp.value.match(/krabby|paddy/i)){
+triv();
+popup("If you get to have a taste of krabby paddy, you will surely love to spend your life-time inside Bikini Bottom. tahahahahaha");
+}
+else if(inp.value.match(/bottom|bikini/i)){
+triv();
+popup("Bikini bottom is the most precious and loveliest place in underwater.");
+let g = setInterval(()=>mouth.classList.toggle("zoomy"),1000);
+setTimeout(()=>clearInterval(g),2000);
+}
+else if(inp.value.match(/nick/i)){
+triv();
+popup("The best cable channel in the world thahahahahahh!!!");
+}
+
+else if(inp.value.match(/gary|garry|pet/i)){
+triv();
+popup("Gary is the cutest pet in the world....oh my Gary!!!!");
+}
+
+else if(inp.value.match(/taha|haha|hoho|tihi|kiki/i)){
+triv();
+popup("tahahahaha tadadadadadaa!!!");
+}
+else if(inp.value.match(/hey|what|hi|hello|how are you/i)){
+triv();
+popup("Howdy! I'm Spongebob SquarePant. Talking live from bikini bottom");
+}
+
+else if(inp.value.match(/how are you|who are you/i)){
+triv();
+popup("I am Spongebob SquarePants, a comedian and also a DJ 😁🤟");
+}
+
+else if(inp.value.match(/how old|old are you/i)){
+triv();
+popup("It's a secret but I'm quite sure I'm older than your grandfather, don't let this yellow skin fool ya thahahahahahh");
+}
+
+else if(inp.value.match(/peedeepee|poopdoopoop|pdp|poop|pee/i)){
+triv();
+popup("hahahah it's so cold to laugh now.");
+}
+
+
+else if(inp.value.match(/boat|jelly|fish|Mrs|miss|puff/i)){
+triv();
+popup("Boating and jelly fishing is the best fun in Bikini Bottom, Miss puff wouldn't let me have my boating license.");
+}
+
+else if(inp.value.match(/sponge/i)){
+dance();
+triv(10);
+popup("That's me!!!<br>I'm ready !!!!!!!");
+}
+
+else if(inp.value.match(/squid|clarinet/i)){
+triv();
+popup("Squidward is the best musician we have in Bikini Bottom.<br>His clarinet skill is a bomb !!!");
+nose.classList.toggle("longnose");
+}
+else{
+triv();
+popup("I love musical doodleeeeeeeee <br><br>Type 'dance' if you are feeling bored...<br><br>Type <b>'trivia'</b> for more fun.");
+}
+options.style.display="block"
+}
+stomach.classList.add("breathe");
+
+//dance
+
+
+
+function quotes(){
+ popit.style.display="block"
+ popid.innerHTML="<small style='font-size:9px'>Welcome to Trivia mode, click the blue bordered circle below to navigate through the available trivias, it's damn cold down here in Bikini Bottom, I just can't afford to keep reading them for you.</small>" 
+ }
+
+
+toll=0
+function dance(){
+toll++
+if(toll==2){
+toll=0
+}
+
+if(toll==0){
+readY.pause();
+}
+
+
+if(toll==1)
+{""
+readY.play();
+readY.loop=true;}
+
+goggle.classList.toggle("hide");
+document.getElementById("limb").classList.toggle("bigboot2");
+ mouth.classList.toggle("sing");
+eyes1.classList.toggle("cls");
+eyes2.classList.toggle("cls");
+ball1.classList.toggle("sleepy");
+ball2.classList.toggle("sleepy");
+stomach.classList.toggle("bigboot");
+mouth.classList.toggle("shout");
+comment.style.display="none";
+sponge.classList.toggle("sing")
+cbox.classList.toggle("hide");
+triv();
+
+}
+
+//touch tummy
+
+stomach.onclick=function (){ 
+}
+
+var body=document.body;
+
+
+//snow flakes
+function printSnow(){ 
+ let t=document.createElement("section");
+t.innerHTML="<i class='fa fa-snowflake'></i>"
+t.style.left=Math.floor(Math.random()*window.innerWidth)+"px";
+t.style.opacity=Math.random();
+t.style.animationDuration=Math.floor(Math.random()*10)+"s";
+t.style.fontSize=Math.floor(Math.random()*35)+"px";
+setInterval(()=>t.style.left=Math.random()+"px",3000);
+setInterval(()=>t.style.right=Math.random()+"px",3000);
+setTimeout(function (){ 
+t.classList.add("shad");
+t.remove()
+},5000);
+body.appendChild(t);
+}
+setInterval(function (){ 
+printSnow();
+},200);
+
+//hide pop message
+comment.onclick=()=>comment.style.display="none";
+
+
+
+</script>
+</body>
+</html>
